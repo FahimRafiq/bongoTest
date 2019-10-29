@@ -1,0 +1,37 @@
+Ans 2:
+interface Vehicle { 
+	int set_num_of_wheels() 
+	int set_num_of_passengers() boolean has_gas() 
+} 
+
+a)Here an interface is used to provide the blueprint for a Vehicle. To create car and plane class we must implement them with the Vehicle interface and have to make sure the 3 abstract methods must be implemented in the body. We may add other methods as necessary along with the interface implementation to suit and tailor to the car and plane class respectively.
+
+b)We can also use abstraction for this solution. Here is an example for the Car class.
+
+abstract class Vehicle{
+	abstract int set_num_of_wheels() 
+	abstract set_num_of_passengers()
+	abstract boolean has_gas()
+}
+
+class Car extends Vehicle{
+	private int noOfWheels;
+	private int noOfPassengers;
+	private boolean hasGas
+
+	public Car(int noW, int noP, boolean hasGas){
+		this.noOfWheels = noW;
+		this. noOfPassengers = noP;
+		this.hasGas = hasGas;
+	}
+	int set_num_of_wheels() {
+		return noOfWheels ;
+	}
+	int set_num_of_passengers() {
+		return noOfPassengers;
+	}
+	boolean has_gas() {
+		return hasGas;
+	}
+
+}

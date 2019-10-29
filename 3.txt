@@ -1,0 +1,39 @@
+/*Here a video application will be made using Mediaplayer and SurfaceView. SurfaceView will be the holder for the mediaPlayer. There will be 3 buttons: Play, Forward & Rewind in our activity.
+*/ 
+
+class MainActivity needs to extends AppCompatActivity and implement SurfaceHolder.Callback 
+	Declare SurfaceView reference called surfaceView;
+	Declare MediaPlayer reference called mediaPlayer;
+
+	onCreate() 
+		mediaPlayer is initiated calling mediaPlayer.create method where we point it to our video directory.
+		
+		surfaceView linkied to its Id using findViewById()
+		//to keep our mobile screen always on during the video
+		surfaceView.setKeepScreenOn(true) is called
+
+		Surfaceholder object holder is instantiated using surfaceView.getHolder()
+		holder.addCallback(this)
+		Set screen size of surfaceView using holder.setFixedSize method
+	
+		
+		Create Button play and link it to its view using findViewById method
+		IF play button is clicked:
+			Start mediaPlayer using mediaPlayer.Start()
+		ENDIF
+	
+		Create Button forward and link it to its view using findViewById method
+		IF forward button is clicked:
+			//fetch the current position of the player and add 10 seconds to it
+			forward video using mediaPlayer.seekTo(mediaPlayer.getCurrentPosition()+10000)
+		ENDIF
+
+		Create Button rewind and link to its view using findViewById method
+		IF rewind button is clicked:
+			//fetch the current position of the player and subtract 10 seconds from it
+			Rewind video using mediaPlayer.seekTo(mediaPlayer.getCurrentPosition()-10000)
+		ENDIF
+
+	 END
+	//Override surfaceCreated(), surfaceChanged() and surfaceDestroyed() methods since SurfaceHolder.Callback is implemented.
+END
